@@ -36,8 +36,10 @@ body {
 
   padding-top: 2.5vh;
   padding-bottom: 2.5vh;
+}
 
-  z-index: 9999;
+:root{
+    --navbar-z: 9999;
 }
 
 /* Title spacing */
@@ -73,6 +75,32 @@ section, div[id], h2[id], h3[id] {
   color: #51614d;
 }
 
+/* MOBILE MENU TOGGLE */
+.mobile-menu-toggle {
+    display: none;              /* hidden by default */
+    width: 100%;
+    padding: 1.5vh 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    cursor: pointer;
+}
+
+
+.mobile-menu-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background-color: #8B9D87;
+}
+
+.mobile-menu-toggle .menu-text {
+    color: #8B9D87;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -97,7 +125,7 @@ section, div[id], h2[id], h3[id] {
 }
 
 #imagens {
-	width: 30vh;
+	width: 50vh;
 }
 
 
@@ -145,6 +173,14 @@ section, div[id], h2[id], h3[id] {
 
 #myForm, #ModalLabel, #myModal {
     color: #8B9D87;
+}
+
+.modal-backdrop {
+    z-index: calc(var(--navbar-z) + 1) !important;
+}
+
+.modal {
+    z-index: calc(var(--navbar-z) + 2) !important;
 }
 
 .carousel-inner {
@@ -245,12 +281,12 @@ section, div[id], h2[id], h3[id] {
 
 
 	#banner-date {
-		padding: 2vh 0;
+		padding: 1vh 0;
 		background-color: #FDF8F0;
 		color: #8B9D87;
 		text-align: center;
 		margin: 0 !important;
-		/* font-size: calc(1.375rem + 3vw);*/
+		font-size: calc(1.375rem + 2.5vw);
 		
 	}
 
@@ -369,21 +405,23 @@ section, div[id], h2[id], h3[id] {
 		}
 
 		.navbarinside {
+			display: none; /* hidden by default */
+			flex-direction: column;
 			width: 100%;
-			flex-direction: column;   /* stack vertically */
-			justify-content: center;
-			align-items: center;
 			padding: 2vh 0;
-			gap: 1.5vh;               /* spacing between links */
+			gap: 2vh;
+			border-top: none;
+			border-bottom: none;
+		}
+		.mobile-menu-toggle {
+			display: flex; /* show toggle on mobile */
 		}
 
-		.navbarinside a {
-			padding: 0.5vh;
-			width: 100%;
-			text-align: center;
-		}
-
+		.navbarinside.open {
+			display: flex; /* show when toggled */
+		}	
 	}
+
 
 	  
 		.grid-item {
