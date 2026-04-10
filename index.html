@@ -179,7 +179,7 @@
                             MBWay/Revolut 910668797 | 913047535
                         </p>
                         <div class="modal-body">
-                            <form id="presentForm" action="https://script.google.com/macros/s/AKfycbzJfzQqmXflAyZVfClWT6vLhTcew7RRIWDxDKkQV899HFh40ovvdbo_yOxVFeow0Xsl/exec">
+                            <form id="presentForm" action="https://script.google.com/macros/s/AKfycbzMdw22K4xB49oKDd84oSwOO6nYncGBNsbdeSaBcXXZ98AfbUqCIMBZOZvrlRc1gPSl/exec">
                                 <div class="form-group">
                                     <label for="name">Nome:</label>
                                     <input type="text" class="form-control" id="name" name="name">
@@ -194,7 +194,7 @@
                                 </div>
 
                                 <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-outline-secondary" id="clickable">Enviar</button>
+                                    <button type="submit" class="btn btn-outline-secondary" id="clickable2">Enviar</button>
                                 </div>
                             </form>
 
@@ -235,12 +235,8 @@
         var modalElement = document.getElementById("myModal");
         var modal = new bootstrap.Modal(modalElement); // Bootstrap 5 way to control modals
         
-        var casaImage = document.querySelector('img[alt="Casa"]');
 
         buttons.forEach(function(button) {
-            var image = button.closest('.card')?.querySelector('img');
-            var option = document.createElement("option");
-
             button.addEventListener("click", function() {
                 document.getElementById("name").value = "";
                 document.getElementById("value").value = "";
@@ -249,13 +245,6 @@
                 modal.show();
             });
         });
-        if (casaImage) {
-            var option = document.createElement("option");
-            option.value = casaImage.alt;
-            option.text = "Contribuição para a casa nova";
-        }
-        
-        
 
         document.querySelectorAll(".close").forEach(function(closeBtn) {
             closeBtn.addEventListener("click", function() {
@@ -270,12 +259,16 @@
         });
     });
 
-
         window.addEventListener("load", function() {
             const form = document.getElementById('presentForm');
             if (form) {
                 form.addEventListener("submit", function(e) {
                     e.preventDefault();
+                    
+                    const submitBtn = document.getElementById("clickable2");
+                    submitBtn.disabled = true;
+                    submitBtn.innerText = "A enviar...";
+                    
                     const data = new FormData(form);
                     const action = e.target.action;
                     fetch(action, {
