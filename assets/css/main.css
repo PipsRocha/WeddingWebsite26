@@ -35,16 +35,23 @@ body {
   align-items: center;
 
   padding-top: 2.5vh;
-  padding-bottom: 2.5vh;
+  text-align: center;
+  
+}
+
+.navbar h1 {
+	font-size: calc(1.375rem + 1.5vw);
+
 }
 
 :root{
     --navbar-z: 9999;
 }
 
-/* Title spacing */
+/* Title */
 .title-container {
-  margin-bottom: 2.5vh;
+  margin-bottom: 2vh;
+  
 }
 
 /* Menu container */
@@ -57,7 +64,7 @@ body {
   justify-content: space-around;
   align-items: center;
 
-  padding: 1vh 0; /* THIS is what makes it visible */
+  padding: 1vh 0;
 }
 
 section, div[id], h2[id], h3[id] {
@@ -68,7 +75,7 @@ section, div[id], h2[id], h3[id] {
 .navbarinside a {
   color: #8B9D87;
   text-decoration: none;
-  padding: 1.5vh 1vh; /* spacing for each link */
+  padding: 1.5vh 1vh;
 }
 
 .navbarinside a:hover {
@@ -77,9 +84,9 @@ section, div[id], h2[id], h3[id] {
 
 /* MOBILE MENU TOGGLE */
 .mobile-menu-toggle {
-    display: none;              /* hidden by default */
+    display: none;       
     width: 100%;
-    padding: 1.5vh 0;
+    
     justify-content: center;
     align-items: center;
     gap: 1vh;
@@ -112,7 +119,7 @@ section, div[id], h2[id], h3[id] {
 	background-color: #FDF8F0;/*#e28566;*/
 	color: #8B9D87;
     justify-content: space-around;
-    scroll-margin-top: 120px; /* adjust to your navbar height */
+    scroll-margin-top: 120px; /* adjust to navbar height */
 }
 
 
@@ -124,8 +131,10 @@ section, div[id], h2[id], h3[id] {
     align-items: center;  /* Horizontally center the content */
 }
 
-#imagens {
-	width: 50vh;
+
+
+.hotel-title {
+    min-height: 4.2rem; /* adjust until all titles fit nicely */
 }
 
 
@@ -270,14 +279,13 @@ section, div[id], h2[id], h3[id] {
 
 /* Banner */
 
-	#banner {
-		background-color: #FDF8F0	;
-		display: flex;
-		flex-direction: column;
-		margin-top: var(--navbar-height, 100px);
-		width: 100%;
-
-	}
+#banner {
+    background-color: #FDF8F0;
+    margin-top: var(--navbar-height, 100px);
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
 
 
 	#banner-date {
@@ -383,6 +391,22 @@ section, div[id], h2[id], h3[id] {
 	body.is-loading #banner:after {
 		opacity: 1;
 	}
+
+	.banner-img-wrapper {
+		position: relative;
+		width: 100%;
+	}
+
+	#demo {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #FDF8F0;
+		font-size: 5rem;
+		
+	}
+
 
 
 
