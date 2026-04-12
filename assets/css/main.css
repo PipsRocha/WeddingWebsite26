@@ -404,7 +404,6 @@ section, div[id], h2[id], h3[id] {
 		transform: translateX(-50%);
 		color: #FDF8F0;
 		font-size: 5rem;
-		
 	}
 
 
@@ -444,6 +443,10 @@ section, div[id], h2[id], h3[id] {
 		.navbarinside.open {
 			display: flex; /* show when toggled */
 		}	
+
+		#demo {
+			font-size: 1.5rem;
+		}
 	}
 
 
