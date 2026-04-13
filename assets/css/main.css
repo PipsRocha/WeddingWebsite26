@@ -132,13 +132,18 @@ section, div[id], h2[id], h3[id] {
     align-items: center;  /* Horizontally center the content */
 }
 
-
+.gallery {
+	height: 35vh;
+}
 
 .hotel-title {
     min-height: 4.2rem; /* adjust until all titles fit nicely */
 }
 
 
+#housesection {
+    display: none;
+}
 
 
 /* Buttons */
@@ -165,14 +170,6 @@ section, div[id], h2[id], h3[id] {
     background-color: #FDF8F0!important;
     color:#8B9D87 !important;
     border-color:#8B9D87 !important;
-}
-
-#aqui {
-	color:#8B9D87;
-}
-
-#aqui:hover {
-	color: #8B9D87;
 }
 
 /* Forms */
